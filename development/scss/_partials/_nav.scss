@@ -99,34 +99,65 @@ nav {
 		}
   }
 
-  .slide-nav {
+  .arrow-link {
     display: none; //block
     position: absolute;
     width: 100%;
     height: 36px;
     @include align(c, c);
 
-    .arrow-prev,
-    .arrow-next,
-    .arrow-last,
-    .arrow-first {
+    .arrow-about,
+    .arrow-contact {
+      position: absolute;
       pointer-events: auto;
       cursor: pointer;
-      height: 36px;
-      width: 21px;
-      position: absolute;
+
+      .arrow {
+        opacity: 0;
+        height: 36px;
+        width: 21px;
+        transition: all .25s;
+      }
+      p {
+        opacity: 0;
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 30px;
+      }
     }
 
-    .arrow-prev,
-    .arrow-last {
-      background-image: url('../assets/img/icon/prev.png');
-      left: 0;
+    .arrow-about {
+      @include align(l,c);
+      .arrow, p {
+        float: left;
+      }
+      .arrow {
+        background-image: url('../assets/img/icon/prev.png');
+        margin-right: 50px;
+      }
+
+      &:hover {
+        .arrow {
+          margin-right: 70px;
+        }
+      }
     }
 
-    .arrow-next,
-    .arrow-first {
-      right: 0;
-      background-image: url('../assets/img/icon/next.png');
+    .arrow-contact {
+      @include align(r,c);
+      .arrow, p {
+        float: right;
+      }
+      .arrow {
+        background-image: url('../assets/img/icon/next.png');
+        margin-left: 50px;
+      }
+
+      &:hover {
+        .arrow {
+          margin-left: 70px;
+        }
+      }
     }
   }
 
@@ -176,6 +207,23 @@ nav {
     width: 36px;
     background-image: url('../assets/img/icon/down.png');
     @include align(c, b);
+
+    animation-name: ScroolDown;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes ScroolDown {
+    0% {
+      margin-bottom: 5px;
+    }
+    50% {
+      margin-bottom: -5px;
+    }
+    100% {
+      margin-bottom: 5px;
+    }
   }
 }
 

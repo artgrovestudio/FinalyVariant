@@ -417,7 +417,7 @@ nav {
   nav .hamburger-open .line:nth-child(3) {
     -webkit-transform: translateY(-9.25px) rotate(-45deg);
             transform: translateY(-9.25px) rotate(-45deg); }
-  nav .slide-nav {
+  nav .arrow-link {
     display: none;
     position: absolute;
     width: 100%;
@@ -426,23 +426,48 @@ nav {
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%); }
-    nav .slide-nav .arrow-prev,
-    nav .slide-nav .arrow-next,
-    nav .slide-nav .arrow-last,
-    nav .slide-nav .arrow-first {
+    nav .arrow-link .arrow-about,
+    nav .arrow-link .arrow-contact {
+      position: absolute;
       pointer-events: auto;
-      cursor: pointer;
-      height: 36px;
-      width: 21px;
-      position: absolute; }
-    nav .slide-nav .arrow-prev,
-    nav .slide-nav .arrow-last {
-      background-image: url("../assets/img/icon/prev.png");
-      left: 0; }
-    nav .slide-nav .arrow-next,
-    nav .slide-nav .arrow-first {
+      cursor: pointer; }
+      nav .arrow-link .arrow-about .arrow,
+      nav .arrow-link .arrow-contact .arrow {
+        opacity: 0;
+        height: 36px;
+        width: 21px;
+        -webkit-transition: all .25s;
+        transition: all .25s; }
+      nav .arrow-link .arrow-about p,
+      nav .arrow-link .arrow-contact p {
+        opacity: 0;
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 30px; }
+    nav .arrow-link .arrow-about {
+      top: 50%;
+      left: 0;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%); }
+      nav .arrow-link .arrow-about .arrow, nav .arrow-link .arrow-about p {
+        float: left; }
+      nav .arrow-link .arrow-about .arrow {
+        background-image: url("../assets/img/icon/prev.png");
+        margin-right: 50px; }
+      nav .arrow-link .arrow-about:hover .arrow {
+        margin-right: 70px; }
+    nav .arrow-link .arrow-contact {
+      top: 50%;
       right: 0;
-      background-image: url("../assets/img/icon/next.png"); }
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%); }
+      nav .arrow-link .arrow-contact .arrow, nav .arrow-link .arrow-contact p {
+        float: right; }
+      nav .arrow-link .arrow-contact .arrow {
+        background-image: url("../assets/img/icon/next.png");
+        margin-left: 50px; }
+      nav .arrow-link .arrow-contact:hover .arrow {
+        margin-left: 70px; }
   nav .social-media {
     position: absolute;
     bottom: 0;
@@ -509,7 +534,31 @@ nav {
     bottom: 0;
     left: 50%;
     -webkit-transform: translateX(-50%);
-            transform: translateX(-50%); }
+            transform: translateX(-50%);
+    -webkit-animation-name: ScroolDown;
+            animation-name: ScroolDown;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out; }
+
+@-webkit-keyframes ScroolDown {
+  0% {
+    margin-bottom: 5px; }
+  50% {
+    margin-bottom: -5px; }
+  100% {
+    margin-bottom: 5px; } }
+
+@keyframes ScroolDown {
+  0% {
+    margin-bottom: 5px; }
+  50% {
+    margin-bottom: -5px; }
+  100% {
+    margin-bottom: 5px; } }
 
 nav.open {
   position: fixed;
@@ -616,14 +665,15 @@ nav.open {
         color: #212121;
         background-color: #fff; }
     #index .section.header .content h1 {
-      font-size: 48px;
-      line-height: 48px;
+      font-family: Playfair Display;
+      font-size: 72px;
+      line-height: 72px;
       text-align: center; }
     #index .section.header .content h2 {
       font-family: Roboto;
-      font-weight: 200;
-      font-size: 18px;
-      line-height: 18px;
+      font-weight: 100;
+      font-size: 26px;
+      line-height: 26px;
       text-align: center;
       margin-top: 30px; }
 
