@@ -1,0 +1,41 @@
+doctype html
+html
+  head
+    title Art Grove Studio
+    include _includes/_meta
+
+    // Style		
+    link(rel='stylesheet', type='text/css', href='css/loader.css')
+    link(rel='stylesheet', type='text/css', href='css/style.css')
+    
+  body#index
+  
+    include _includes/_loader
+    include _includes/_nav    
+    
+    #fullpage
+      .section.header
+        video(loop='', muted='', data-autoplay='')         
+          source(src='assets/video/Timelapse1.mp4', type='video/mp4')
+          source(src='assets/video/Timelapse1.webm', type='video/webm')
+        .content
+          h1 Art Grove Studio
+          h2 Студия дизайна и веб разработки
+          .btn.btn-projects проекты
+      .section
+        .bg
+      .section
+      .section
+    
+    // JQuery
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js')    
+    // fullPage
+    script(type='text/javascript', src='assets/js/jquery.fullPage.js')       
+    // fullPage Setting
+    script(type='text/javascript', src='js/fullPageHomeSetting.js')    
+    // GSAP
+    script(src='http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js')
+    script(src='http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TimelineMax.min.js')
+    script(src='http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/easing/EasePack.min.js')
+    // Main Script
+    script(type='text/javascript', src='js/main.js')
