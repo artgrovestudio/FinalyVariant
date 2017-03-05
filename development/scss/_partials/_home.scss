@@ -16,10 +16,10 @@
       transform: translateX(-50%);
       height: 100%;
       min-width: 100%;
+      background-image: url('../assets/video/video-bg-poster.jpg');
       background-size: cover;
       background-color: black; /* in case the video doesn't fit the whole page*/
       background-position: center center;
-      background-size: contain;
       object-fit: cover; /*cover video background */
       z-index: 3;
     }
@@ -44,11 +44,17 @@
       top: 50%;
       left: 0;
       z-index: 4;
+      @include device('mobile') {
+        margin-top: 30px;
+      }
 
   		transform: translate3d(0,0,0) translateY(-50%);
 
         .btn-projects {
-          margin-top: 60px;
+          margin-top: 50px;
+          @include device('mobile') {
+            margin-top: 70px;
+          }
 
           &:hover {
             color: $black-color;
@@ -58,18 +64,21 @@
 
         h1 {
           font-family: Playfair Display;
-          font-size: 72px;
-          line-height: 72px;
           text-align: center;
+          @include responsive(font-size, 32px, 42px, 54px, 48px, 68px);
+          @include responsive(line-height, 32px, 42px, 54px, 48px, 68px);
         }
 
         h2 {
           font-family: Roboto;
           font-weight: 100;
-          font-size: 26px;
-          line-height: 26px;
+          @include responsive(font-size, 14px, 18px, 21px, 20px, 26px);
+          @include responsive(line-height, 14px, 18px, 21px, 20px, 26px);
           text-align: center;
           margin-top: 30px;
+          @include device('mobile') {
+            margin-top: 20px;
+          }
         }
     }
   }

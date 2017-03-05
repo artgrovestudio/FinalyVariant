@@ -1,0 +1,59 @@
+nav.menu {
+  position: absolute;
+  z-index: 99998;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 0;
+  background-color: #101010;
+
+  transition: height .5s;
+  animation-timing-function: ease-out;
+
+  ul {
+    display: none;
+    position: absolute;
+    @include align(c,c);
+    animation-name: fadeInDown;
+    animation-duration: .5s;
+    padding: 0;
+    margin: 0;
+    
+    a {
+      color: $white-color;
+
+      li {
+        text-decoration: none;
+        list-style-type: none;
+        text-align: center;
+        font-family: Roboto;
+        font-weight: 900;
+        font-size: 26px;
+        line-height: 46px;
+      }
+    }
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translate3d(0, -100%, 0) translate(-50%, -50%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .fadeInDown {
+
+  }
+}
+
+nav.menu.open {
+  height: 100%;
+
+  ul {
+    display: block;
+  }
+}

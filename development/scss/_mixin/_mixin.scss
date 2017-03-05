@@ -1,14 +1,10 @@
 @mixin device($type) {
-  @if $type == 'iphone-5' {
-    @media only screen and (max-width: 320px) {
-      @content;
-    }
-  } @else if $type == 'mobile' {
-    @media only screen and (max-width: 768px) {
+  @if $type == 'mobile' {
+    @media only screen and (max-width: 767px) {
       @content;
     }
   } @else if $type == 'tablet' {
-    @media only screen and (min-width: 769px) {
+    @media only screen and (min-width: 768px) {
       @content;
     }
   } @else if $type == 'laptop' {
@@ -29,18 +25,23 @@
 @mixin font-size($mobile, $tablet, $laptop, $desktop, $large-desktop) {
   @include device('mobile') {
     font-size: $mobile;
+    line-height: $mobile;
   }
   @include device('tablet') {
     font-size: $tablet;
+    line-height: $tablet;
   }
   @include device('laptop') {
     font-size: $laptop;
+    line-height: $laptop;
   }
   @include device('desktop') {
     font-size: $desktop;
+    line-height: $desktop;
   }
   @include device('large-desktop') {
     font-size: $large-desktop;
+    line-height: $large-desktop;
   }
 }
 
@@ -103,5 +104,23 @@
   }
   @include device('large-desktop') {
     #{$var}: $global-padding-large-desktop;
+  }
+}
+
+@mixin responsive($value, $mobile, $tablet, $laptop, $desktop, $large-desktop) {
+  @include device('mobile') {
+    #{$value}: $mobile;
+  }
+  @include device('tablet') {
+    #{$value}: $tablet;
+  }
+  @include device('laptop') {
+    #{$value}: $laptop;
+  }
+  @include device('desktop') {
+    #{$value}: $desktop;
+  }
+  @include device('large-desktop') {
+    #{$value}: $large-desktop;
   }
 }

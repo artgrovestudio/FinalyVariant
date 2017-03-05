@@ -26,13 +26,17 @@ window.onload = function () {
   // Nav desktop
 
 	$('nav .hamburger').click(function(){
-		if ($("nav .hamburger").hasClass("hamburger-open")) {
-			$("nav .hamburger").removeClass("hamburger-open");
-			$("nav").removeClass("nav-desktop-open");
+		if ($("nav.border-nav .hamburger").hasClass("open")) {
+			$("nav.border-nav .hamburger").removeClass("open");
+			$("nav.menu").removeClass("open");
+      $(arrowLink).fadeIn();
+      $(scroolDown).fadeIn();
 		}
 		else {
-			$("nav .hamburger").addClass("hamburger-open");
-			$("nav").addClass("nav-open");
+			$("nav.border-nav .hamburger").addClass("open");
+			$("nav.menu").addClass("open");
+      $(arrowLink).fadeOut();
+      $(scroolDown).fadeOut();
 		}
 	});
 }
