@@ -38,6 +38,7 @@ nav.border-nav {
     a {
       pointer-events: auto;
       color: $white-color;
+      transition: color .25s;
 
       p {
         font-weight: 900;
@@ -45,6 +46,12 @@ nav.border-nav {
         padding: 0;
         margin: 0;
       }
+    }
+  }
+
+  .logo.black {
+    a {
+      color: $black-color;
     }
   }
 
@@ -88,6 +95,12 @@ nav.border-nav {
     }
   }
 
+  .hamburger.black {
+    .line {
+      background-color: $black-color;
+    }
+  }
+
   .hamburger.open {
     .line:nth-child(1) {
 			transform: translateY(9.25px) rotate(45deg);
@@ -108,71 +121,6 @@ nav.border-nav {
 		}
   }
 
-  .arrow-link {
-    display: none; //block
-    position: absolute;
-    width: 100%;
-    height: 36px;
-    @include align(c, c);
-
-    .arrow-about,
-    .arrow-contact {
-      position: absolute;
-      pointer-events: auto;
-      cursor: pointer;
-      @include device('mobile') {
-        display: none;
-      }
-
-      .arrow {
-        opacity: 0;
-        height: 36px;
-        width: 21px;
-        transition: all .25s;
-      }
-      p {
-        opacity: 0;
-        font-weight: 900;
-        line-height: 30px;
-        @include responsive(font-size, 24px, 18px, 22px, 18px, 24px);
-      }
-    }
-
-    .arrow-about {
-      @include align(l,c);
-      .arrow, p {
-        float: left;
-      }
-      .arrow {
-        background-image: url('../assets/img/icon/prev.png');
-        @include responsive(margin-right, 15px, 20px, 30px, 30px, 50px);
-      }
-
-      &:hover {
-        .arrow {
-          @include responsive(margin-right, 20px, 30px, 40px, 40px, 70px);
-        }
-      }
-    }
-
-    .arrow-contact {
-      @include align(r,c);
-      .arrow, p {
-        float: right;
-      }
-      .arrow {
-        background-image: url('../assets/img/icon/next.png');
-        @include responsive(margin-left, 15px, 20px, 30px, 30px, 50px);
-      }
-
-      &:hover {
-        .arrow {
-          @include responsive(margin-left, 20px, 30px, 40px, 40px, 70px);
-        }
-      }
-    }
-  }
-
   .social-media {
     position: absolute;
     @include align(l, b);
@@ -183,15 +131,22 @@ nav.border-nav {
     a {
       pointer-events: auto;
       color: $white-color;
+      transition: color .25s;
 
       p {
         display: inline-block;
         padding: 0;
         margin: 0;
         margin-right: 20px;
-        font-weight: 200;
+        font-weight: 300;
         @include responsive(font-size, 10px, 12px, 18px, 14px, 16px);
       }
+    }
+  }
+
+  .social-media.black {
+    a {
+      color: $black-color;
     }
   }
 
@@ -205,6 +160,7 @@ nav.border-nav {
     a {
       pointer-events: auto;
       color: $white-color;
+      transition: color .25s;
 
       p {
         font-weight: 300;
@@ -215,39 +171,9 @@ nav.border-nav {
     }
   }
 
-  .scrool-down {
-    display: none;
-    opacity: 0;
-    position: absolute;
-    pointer-events: auto;
-    cursor: pointer;
-    height: 21px;
-    width: 36px;
-    background-image: url('../assets/img/icon/down.png');
-    background-size: 100%;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    @include align(c, b);
-
-    @include device('mobile') {
-      width: 21px;
-    }
-
-    animation-name: ScroolDown;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-  }
-
-  @keyframes ScroolDown {
-    0% {
-      margin-bottom: 5px;
-    }
-    50% {
-      margin-bottom: -5px;
-    }
-    100% {
-      margin-bottom: 5px;
+  .phone.black {
+    a {
+      color: $black-color;
     }
   }
 }

@@ -1,0 +1,16 @@
+.about-pop-up {
+  z-index: 500;
+  position: absolute;
+  @include align(l,c);
+  left: -50%;
+  height: 100%;
+  width: 50%;
+  background-color: $white-color;
+
+  transition: left .5s;
+  animation-timing-function: ease-in;
+}
+
+.about-pop-up.open {
+  left: 0;
+}

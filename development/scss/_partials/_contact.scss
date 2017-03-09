@@ -1,0 +1,16 @@
+.contact-pop-up {
+  z-index: 500;
+  position: absolute;
+  @include align(r,c);
+  right: -50%;
+  height: 100%;
+  width: 50%;
+  background-color: $white-color;
+
+  transition: right .5s;
+  animation-timing-function: ease-in;
+}
+
+.contact-pop-up.open {
+  right: 0;
+}

@@ -9,37 +9,48 @@ html
     link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css')
     link(rel='stylesheet', type='text/css', href='css/loader.css')
     link(rel='stylesheet', type='text/css', href='css/style.css')
-    
+
   body#index
-  
+
     include _includes/_loader
-    include _includes/_nav 
+    include _includes/_nav
     include _includes/_about
-    include _includes/_contact 
-    
+    include _includes/_contact
+
     #fullpage
       .section.header
-        video(loop='', muted='', data-autoplay='')         
+        video(loop='', muted='', data-autoplay='')
           source(src='assets/video/video-bg.mp4', type='video/mp4')
-          source(src='assets/video/Timelapse1.webm', type='video/webm')
+          source(src='assets/video/video-bg.webm', type='video/webm')
         .content
           h1 Art Grove Studio
           h2 Студия дизайна и веб разработки
           .btn.btn-projects проекты
+        .arrow-link
+          .arrow-about
+            .arrow
+              .line
+              .line
+            p о студии
+          .arrow-contact
+            .arrow
+              .line
+              .line
+            p контакты
+        .scrool-down
       .section
-        .bg
-      .section
-      .section
-    
+
     // JQuery
-    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js')    
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js')
     // fullPage
-    script(type='text/javascript', src='assets/js/jquery.fullPage.js')       
+    script(type='text/javascript', src='assets/js/jquery.fullPage.js')
     // fullPage Setting
-    script(type='text/javascript', src='js/fullPageHomeSetting.js')    
+    script(type='text/javascript', src='js/fullPageHomeSetting.js')
     // GSAP
     script(src='http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js')
     script(src='http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TimelineMax.min.js')
     script(src='http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/easing/EasePack.min.js')
     // Main Script
     script(type='text/javascript', src='js/main.js')
+    // Blur
+    script(type='text/javascript', src='js/foggy.js')
