@@ -107,6 +107,9 @@ nav.border-nav {
       @include device('tablet') {
         transform: translateY(8.25px) rotate(45deg);
       }
+      @include device('large-desktop') {
+        transform: translateY(9.25px) rotate(45deg);
+      }
 		}
 
 		.line:nth-child(2) {
@@ -125,7 +128,7 @@ nav.border-nav {
     position: absolute;
     @include align(l, b);
     @include device('mobile') {
-      display: none;
+      //display: none;
     }
 
     a {
@@ -154,7 +157,7 @@ nav.border-nav {
     position: absolute;
     @include align(r, b);
     @include device('mobile') {
-      display: none;
+      //display: none;
     }
 
     a {

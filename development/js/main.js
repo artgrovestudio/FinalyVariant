@@ -148,9 +148,11 @@ window.onload = function() {
 		if ($("nav.border-nav .hamburger").hasClass("open")) {
 			$("nav.border-nav .hamburger").removeClass("open");
 			$("nav.menu").removeClass("open");
+			$("nav.menu ul").removeClass("fade-in-down");
 		} else {
 			$("nav.border-nav .hamburger").addClass("open");
 			$("nav.menu").addClass("open");
+			$("nav.menu ul").addClass("fade-in-down");
 		}
 	});
 

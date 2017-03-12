@@ -469,6 +469,10 @@ nav.border-nav {
       nav.border-nav .hamburger.open .line:nth-child(1) {
         -webkit-transform: translateY(8.25px) rotate(45deg);
                 transform: translateY(8.25px) rotate(45deg); } }
+    @media only screen and (min-width: 1600px) {
+      nav.border-nav .hamburger.open .line:nth-child(1) {
+        -webkit-transform: translateY(9.25px) rotate(45deg);
+                transform: translateY(9.25px) rotate(45deg); } }
   nav.border-nav .hamburger.open .line:nth-child(2) {
     -webkit-transform: scale(0);
             transform: scale(0); }
@@ -483,9 +487,6 @@ nav.border-nav {
     position: absolute;
     bottom: 0;
     left: 0; }
-    @media only screen and (max-width: 767px) {
-      nav.border-nav .social-media {
-        display: none; } }
     nav.border-nav .social-media a {
       pointer-events: auto;
       color: #fff;
@@ -518,9 +519,6 @@ nav.border-nav {
     position: absolute;
     bottom: 0;
     right: 0; }
-    @media only screen and (max-width: 767px) {
-      nav.border-nav .phone {
-        display: none; } }
     nav.border-nav .phone a {
       pointer-events: auto;
       color: #fff;
@@ -567,10 +565,6 @@ nav.menu {
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
-    -webkit-animation-name: fadeInDown;
-            animation-name: fadeInDown;
-    -webkit-animation-duration: .5s;
-            animation-duration: .5s;
     padding: 0;
     margin: 0; }
     nav.menu ul a {
@@ -581,14 +575,13 @@ nav.menu {
         text-align: center;
         font-family: Roboto;
         font-weight: 900;
-        font-size: 26px;
         line-height: 46px; }
         @media only screen and (max-width: 767px) {
           nav.menu ul a li {
             font-size: 20px; } }
         @media only screen and (min-width: 768px) {
           nav.menu ul a li {
-            font-size: 20px; } }
+            font-size: 32px; } }
         @media only screen and (min-width: 992px) {
           nav.menu ul a li {
             font-size: 22px; } }
@@ -601,23 +594,20 @@ nav.menu {
 
 @-webkit-keyframes fadeInDown {
   from {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0) translate(-50%, -50%);
-            transform: translate3d(0, -100%, 0) translate(-50%, -50%); }
+    opacity: 0; }
   to {
-    opacity: 1;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%); } }
+    opacity: 1; } }
 
 @keyframes fadeInDown {
   from {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0) translate(-50%, -50%);
-            transform: translate3d(0, -100%, 0) translate(-50%, -50%); }
+    opacity: 0; }
   to {
-    opacity: 1;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%); } }
+    opacity: 1; } }
+  nav.menu .fade-in-down {
+    -webkit-animation-name: fadeInDown;
+            animation-name: fadeInDown;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s; }
 
 nav.menu.open {
   height: 100%; }
@@ -958,9 +948,7 @@ nav.menu.open {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   box-sizing: border-box;
-  left: -50%;
   height: 100%;
-  width: 50%;
   background-color: #fff;
   -webkit-transition: left .5s;
   transition: left .5s;
@@ -968,19 +956,34 @@ nav.menu.open {
           animation-timing-function: ease-in; }
   @media only screen and (max-width: 767px) {
     .about-pop-up {
-      padding: 25px; } }
+      width: 80%; } }
   @media only screen and (min-width: 768px) {
     .about-pop-up {
-      padding: 30px; } }
+      width: 80%; } }
   @media only screen and (min-width: 992px) {
     .about-pop-up {
-      padding: 40px; } }
+      width: 75%; } }
   @media only screen and (min-width: 1200px) {
     .about-pop-up {
-      padding: 45px; } }
+      width: 50%; } }
   @media only screen and (min-width: 1600px) {
     .about-pop-up {
-      padding: 80px; } }
+      width: 50%; } }
+  @media only screen and (max-width: 767px) {
+    .about-pop-up {
+      left: -80%; } }
+  @media only screen and (min-width: 768px) {
+    .about-pop-up {
+      left: -80%; } }
+  @media only screen and (min-width: 992px) {
+    .about-pop-up {
+      left: -75%; } }
+  @media only screen and (min-width: 1200px) {
+    .about-pop-up {
+      left: -50%; } }
+  @media only screen and (min-width: 1600px) {
+    .about-pop-up {
+      left: -50%; } }
   .about-pop-up .content {
     position: absolute;
     width: 66%;
@@ -991,9 +994,23 @@ nav.menu.open {
     .about-pop-up .content h2 {
       position: relative;
       font-family: Playfair Display;
-      font-size: 48px;
       color: #212121;
       margin-bottom: 50px; }
+      @media only screen and (max-width: 767px) {
+        .about-pop-up .content h2 {
+          font-size: 36px; } }
+      @media only screen and (min-width: 768px) {
+        .about-pop-up .content h2 {
+          font-size: 36px; } }
+      @media only screen and (min-width: 992px) {
+        .about-pop-up .content h2 {
+          font-size: 36px; } }
+      @media only screen and (min-width: 1200px) {
+        .about-pop-up .content h2 {
+          font-size: 36px; } }
+      @media only screen and (min-width: 1600px) {
+        .about-pop-up .content h2 {
+          font-size: 48px; } }
       .about-pop-up .content h2:after {
         content: "";
         position: absolute;
@@ -1005,10 +1022,38 @@ nav.menu.open {
         height: 6px;
         background-color: #212121; }
     .about-pop-up .content p {
-      font-size: 18px;
-      line-height: 24px;
       font-weight: 200;
       color: #212121; }
+      @media only screen and (max-width: 767px) {
+        .about-pop-up .content p {
+          font-size: 16px; } }
+      @media only screen and (min-width: 768px) {
+        .about-pop-up .content p {
+          font-size: 16px; } }
+      @media only screen and (min-width: 992px) {
+        .about-pop-up .content p {
+          font-size: 16px; } }
+      @media only screen and (min-width: 1200px) {
+        .about-pop-up .content p {
+          font-size: 16px; } }
+      @media only screen and (min-width: 1600px) {
+        .about-pop-up .content p {
+          font-size: 18px; } }
+      @media only screen and (max-width: 767px) {
+        .about-pop-up .content p {
+          line-height: 22px; } }
+      @media only screen and (min-width: 768px) {
+        .about-pop-up .content p {
+          line-height: 22px; } }
+      @media only screen and (min-width: 992px) {
+        .about-pop-up .content p {
+          line-height: 22px; } }
+      @media only screen and (min-width: 1200px) {
+        .about-pop-up .content p {
+          line-height: 22px; } }
+      @media only screen and (min-width: 1600px) {
+        .about-pop-up .content p {
+          line-height: 24px; } }
 
 .about-pop-up.open {
   left: 0; }
@@ -1020,14 +1065,42 @@ nav.menu.open {
   right: 0;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  right: -50%;
   height: 100%;
-  width: 50%;
   background-color: #fff;
   -webkit-transition: right .5s;
   transition: right .5s;
   -webkit-animation-timing-function: ease-in;
           animation-timing-function: ease-in; }
+  @media only screen and (max-width: 767px) {
+    .contact-pop-up {
+      width: 80%; } }
+  @media only screen and (min-width: 768px) {
+    .contact-pop-up {
+      width: 80%; } }
+  @media only screen and (min-width: 992px) {
+    .contact-pop-up {
+      width: 75%; } }
+  @media only screen and (min-width: 1200px) {
+    .contact-pop-up {
+      width: 50%; } }
+  @media only screen and (min-width: 1600px) {
+    .contact-pop-up {
+      width: 50%; } }
+  @media only screen and (max-width: 767px) {
+    .contact-pop-up {
+      right: -80%; } }
+  @media only screen and (min-width: 768px) {
+    .contact-pop-up {
+      right: -80%; } }
+  @media only screen and (min-width: 992px) {
+    .contact-pop-up {
+      right: -75%; } }
+  @media only screen and (min-width: 1200px) {
+    .contact-pop-up {
+      right: -50%; } }
+  @media only screen and (min-width: 1600px) {
+    .contact-pop-up {
+      right: -50%; } }
   .contact-pop-up .contact-form {
     position: absolute;
     top: 50%;
@@ -1039,9 +1112,23 @@ nav.menu.open {
       position: relative;
       text-align: right;
       font-family: Playfair Display;
-      font-size: 48px;
       color: #212121;
       margin-bottom: 50px; }
+      @media only screen and (max-width: 767px) {
+        .contact-pop-up .contact-form h2 {
+          font-size: 48px; } }
+      @media only screen and (min-width: 768px) {
+        .contact-pop-up .contact-form h2 {
+          font-size: 48px; } }
+      @media only screen and (min-width: 992px) {
+        .contact-pop-up .contact-form h2 {
+          font-size: 48px; } }
+      @media only screen and (min-width: 1200px) {
+        .contact-pop-up .contact-form h2 {
+          font-size: 36px; } }
+      @media only screen and (min-width: 1600px) {
+        .contact-pop-up .contact-form h2 {
+          font-size: 48px; } }
       .contact-pop-up .contact-form h2:after {
         content: "";
         position: absolute;
@@ -1072,7 +1159,7 @@ nav.menu.open {
         display: block;
         border: none;
         padding: 20px 0 10px;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         border-bottom: solid 1px #212121;
         background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 96%, #212121 4%);
         background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #212121 4%);
@@ -1083,6 +1170,26 @@ nav.menu.open {
         transition: background 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
         resize: none;
         overflow: hidden; }
+        @media only screen and (max-width: 767px) {
+          .contact-pop-up .contact-form form input,
+          .contact-pop-up .contact-form form textarea {
+            font-size: 14px; } }
+        @media only screen and (min-width: 768px) {
+          .contact-pop-up .contact-form form input,
+          .contact-pop-up .contact-form form textarea {
+            font-size: 14px; } }
+        @media only screen and (min-width: 992px) {
+          .contact-pop-up .contact-form form input,
+          .contact-pop-up .contact-form form textarea {
+            font-size: 14px; } }
+        @media only screen and (min-width: 1200px) {
+          .contact-pop-up .contact-form form input,
+          .contact-pop-up .contact-form form textarea {
+            font-size: 14px; } }
+        @media only screen and (min-width: 1600px) {
+          .contact-pop-up .contact-form form input,
+          .contact-pop-up .contact-form form textarea {
+            font-size: 18px; } }
         .contact-pop-up .contact-form form input:focus::-webkit-input-placeholder,
         .contact-pop-up .contact-form form textarea:focus::-webkit-input-placeholder {
           color: #212121; }

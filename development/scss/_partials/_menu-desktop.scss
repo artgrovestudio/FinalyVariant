@@ -14,8 +14,6 @@ nav.menu {
     display: none;
     position: absolute;
     @include align(c,c);
-    animation-name: fadeInDown;
-    animation-duration: .5s;
     padding: 0;
     margin: 0;
 
@@ -28,9 +26,8 @@ nav.menu {
         text-align: center;
         font-family: Roboto;
         font-weight: 900;
-        font-size: 26px;
         line-height: 46px;
-        @include responsive(font-size, 20px, 20px, 22px, 26px, 26px);
+        @include responsive(font-size, 20px, 32px, 22px, 26px, 26px);
       }
     }
   }
@@ -38,16 +35,15 @@ nav.menu {
   @keyframes fadeInDown {
     from {
       opacity: 0;
-      transform: translate3d(0, -100%, 0) translate(-50%, -50%);
     }
     to {
       opacity: 1;
-      transform: translate(-50%, -50%);
     }
   }
 
-  .fadeInDown {
-
+  .fade-in-down {
+    animation-name: fadeInDown;
+    animation-duration: 1s;
   }
 }
 

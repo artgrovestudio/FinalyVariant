@@ -3,11 +3,10 @@
   position: absolute;
   @include align(l,c);
   box-sizing: border-box;
-  left: -50%;
   height: 100%;
-  width: 50%;
   background-color: $white-color;
-  @include responsive(padding, $global-padding-mobile, $global-padding-tablet, $global-padding-laptop, $global-padding-desktop, $global-padding-large-desktop);
+  @include responsive(width, 80%, 80%, 75%, 50%, 50%);
+  @include responsive(left, -80%, -80%, -75%, -50%, -50%);
 
   transition: left .5s;
   animation-timing-function: ease-in;
@@ -22,7 +21,7 @@
     h2 {
       position: relative;
       font-family: Playfair Display;
-      font-size: 48px;
+      @include responsive(font-size, 36px, 36px, 36px, 36px, 48px);
       color: $black-color;
       margin-bottom: 50px;
 
@@ -39,8 +38,8 @@
     }
 
     p {
-      font-size: 18px;
-      line-height: 24px;
+      @include responsive(font-size, 16px, 16px, 16px, 16px, 18px);
+      @include responsive(line-height, 22px, 22px, 22px, 22px, 24px);
       font-weight: 200;
       color: $black-color;
     }
