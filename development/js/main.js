@@ -1,6 +1,9 @@
 // JS
 
 window.onload = function() {
+
+// Variable
+
 	var loader = $('.loader');
 	var logo = $('nav .logo');
 	var hamburger = $('nav .hamburger');
@@ -8,28 +11,6 @@ window.onload = function() {
 	var arrowLink = $('#index nav .arrow-link');
 	var arrowLinkArrow = $('#index nav .arrow-link .arrow');
 	var arrowLinkParagraph = $('#index nav .arrow-link p');
-
-	var tl = new TimelineMax();
-
-	tl.to(loader, .5, { opacity: "0", ease: Power2.easeInOut }, 2) // Opacity for loader
-		.to(loader, 0, { zIndex: "-99999" }) // Z-Index for loader
-		.to(hamburger, 0, { display: "block" }, -1) // Display for hamburger
-		.to(logo, 1, { left: "0", transform: "translateX(0)", ease: Power4.easeOut }, 2) // Animation logo
-		.to(hamburgerLine, .5, { opacity: "1", ease: Power4.easeInOut }, 2) // Opacity for hamburger
-
-	// Nav desktop
-
-	$('nav .hamburger').click(function() {
-		if ($("nav.border-nav .hamburger").hasClass("open")) {
-			$("nav.border-nav .hamburger").removeClass("open");
-			$("nav.menu").removeClass("open");
-		} else {
-			$("nav.border-nav .hamburger").addClass("open");
-			$("nav.menu").addClass("open");
-		}
-	});
-
-	// function
 
 	var aboutArrowContainer = $(".arrow-link .arrow-about");
 	var aboutParagraph = $(".arrow-link .arrow-about p");
@@ -44,10 +25,39 @@ window.onload = function() {
 	var socialMedia = $("nav .social-media");
 	var phone = $("nav .phone");
 
-	var content = $(".content");
+	var content = $(".section.header .content");
 	var scroolDown = $(".scrool-down");
 
 	var videoBG = $(".section.header video");
+	var videoBGdarken = $(".section.header .video-darken");
+
+// GSAP Animation
+
+	var tl = new TimelineMax();
+
+	tl.to(loader, .5, { opacity: "0", ease: Power2.easeInOut }, 2) // Opacity for loader
+		.to(loader, 0, { zIndex: "-99999" }) // Z-Index for loader
+		.to(hamburger, 0, { display: "block" }, -1) // Display for hamburger
+		.to(logo, 1, { left: "0", transform: "translateX(0)", ease: Power4.easeOut }, 2) // Animation logo
+		.to(hamburgerLine, .5, { opacity: "1", ease: Power4.easeInOut }, 2) // Opacity for hamburger
+
+// Function
+
+	// Scrolling parameters
+
+	function scrollingParameters(param) {
+		if (param == 'enable') {
+			$.fn.fullpage.setMouseWheelScrolling(true);
+			$.fn.fullpage.setAllowScrolling(true);
+			$.fn.fullpage.setKeyboardScrolling(true);
+		} else if (param == 'disable') {
+			$.fn.fullpage.setMouseWheelScrolling(false);
+			$.fn.fullpage.setAllowScrolling(false);
+			$.fn.fullpage.setKeyboardScrolling(false);
+		}
+	}
+
+	// Function for animation pop-up block
 
 	function popUpAnimation(target, action) {
 		if (target == 'about') {
@@ -60,6 +70,8 @@ window.onload = function() {
 				content.fadeOut();
 				logo.addClass("black");
 				socialMedia.addClass("black");
+				videoBGdarken.addClass("visible");
+				scrollingParameters('disable');
 			} else if (action == 'close') {
 				aboutArrowContainer.removeClass("open");
 				aboutPopUp.removeClass("open");
@@ -69,6 +81,8 @@ window.onload = function() {
 				content.fadeIn();
 				logo.removeClass("black");
 				socialMedia.removeClass("black");
+				videoBGdarken.removeClass("visible");
+				scrollingParameters('enable');
 			}
 		} else if (target == 'contact') {
 			if (action == 'open') {
@@ -80,6 +94,8 @@ window.onload = function() {
 				content.fadeOut();
 				hamburger.addClass("black");
 				phone.addClass("black");
+				videoBGdarken.addClass("visible");
+				scrollingParameters('disable');
 			} else if (action == 'close') {
 				contactArrowContainer.removeClass("open");
 				contactPopUp.removeClass("open");
@@ -89,9 +105,13 @@ window.onload = function() {
 				content.fadeIn();
 				hamburger.removeClass("black");
 				phone.removeClass("black");
+				videoBGdarken.removeClass("visible");
+				scrollingParameters('enable');
 			}
 		}
 	};
+
+	// Function click on navigation elements
 
 	function clickOnNavElements(target) {
 		target.click(function() {
@@ -99,6 +119,8 @@ window.onload = function() {
 			popUpAnimation('contact', 'close');
 		});
 	}
+
+	// Function click on arrow button for open pop-up
 
 	function clickOnPopUpButton(target) {
 		if (target == 'about') {
@@ -120,10 +142,22 @@ window.onload = function() {
 		}
 	}
 
+	//	Nav desktop
+
+	$("nav .hamburger").click(function() {
+		if ($("nav.border-nav .hamburger").hasClass("open")) {
+			$("nav.border-nav .hamburger").removeClass("open");
+			$("nav.menu").removeClass("open");
+		} else {
+			$("nav.border-nav .hamburger").addClass("open");
+			$("nav.menu").addClass("open");
+		}
+	});
+
+	// Init function
+
 	clickOnPopUpButton('about');
-	//clickOutsidePopUp('about');
 	clickOnPopUpButton('contact');
-	//clickOutsidePopUp('contact');
 
 	clickOnNavElements($(".hamburger"));
 }

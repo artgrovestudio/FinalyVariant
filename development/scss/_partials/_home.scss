@@ -27,6 +27,21 @@
 			display:none !important;
 		}
 
+		.video-darken {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 4;
+			width: 100%;
+			height: 100%;
+			background-color: #000;
+			opacity: 0;
+			transition: opacity .5s;
+		}
+
+		.video-darken.visible {
+			opacity: .5;
+		}
 
 		.content {
 			width: 100%;

@@ -2,13 +2,49 @@
   z-index: 500;
   position: absolute;
   @include align(l,c);
+  box-sizing: border-box;
   left: -50%;
   height: 100%;
   width: 50%;
   background-color: $white-color;
+  @include responsive(padding, $global-padding-mobile, $global-padding-tablet, $global-padding-laptop, $global-padding-desktop, $global-padding-large-desktop);
 
   transition: left .5s;
   animation-timing-function: ease-in;
+
+  .content {
+    position: absolute;
+    width: 66%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 16%;
+
+    h2 {
+      position: relative;
+      font-family: Playfair Display;
+      font-size: 48px;
+      color: $black-color;
+      margin-bottom: 50px;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -50px;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 6px;
+        background-color: $black-color;
+      }
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 200;
+      color: $black-color;
+    }
+  }
 }
 
 .about-pop-up.open {
