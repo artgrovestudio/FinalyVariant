@@ -574,8 +574,22 @@ nav.menu {
         list-style-type: none;
         text-align: center;
         font-family: Roboto;
-        font-weight: 900;
-        line-height: 46px; }
+        font-weight: 900; }
+        @media only screen and (max-width: 767px) {
+          nav.menu ul a li {
+            line-height: 46px; } }
+        @media only screen and (min-width: 768px) {
+          nav.menu ul a li {
+            line-height: 46px; } }
+        @media only screen and (min-width: 992px) {
+          nav.menu ul a li {
+            line-height: 46px; } }
+        @media only screen and (min-width: 1200px) {
+          nav.menu ul a li {
+            line-height: 46px; } }
+        @media only screen and (min-width: 1600px) {
+          nav.menu ul a li {
+            line-height: 56px; } }
         @media only screen and (max-width: 767px) {
           nav.menu ul a li {
             font-size: 20px; } }
@@ -590,7 +604,7 @@ nav.menu {
             font-size: 26px; } }
         @media only screen and (min-width: 1600px) {
           nav.menu ul a li {
-            font-size: 26px; } }
+            font-size: 36px; } }
 
 @-webkit-keyframes fadeInDown {
   from {
@@ -956,7 +970,7 @@ nav.menu.open {
           animation-timing-function: ease-in; }
   @media only screen and (max-width: 767px) {
     .about-pop-up {
-      width: 80%; } }
+      width: 100%; } }
   @media only screen and (min-width: 768px) {
     .about-pop-up {
       width: 80%; } }
@@ -971,7 +985,7 @@ nav.menu.open {
       width: 50%; } }
   @media only screen and (max-width: 767px) {
     .about-pop-up {
-      left: -80%; } }
+      left: -100%; } }
   @media only screen and (min-width: 768px) {
     .about-pop-up {
       left: -80%; } }
@@ -1073,7 +1087,7 @@ nav.menu.open {
           animation-timing-function: ease-in; }
   @media only screen and (max-width: 767px) {
     .contact-pop-up {
-      width: 80%; } }
+      width: 100%; } }
   @media only screen and (min-width: 768px) {
     .contact-pop-up {
       width: 80%; } }
@@ -1088,7 +1102,7 @@ nav.menu.open {
       width: 50%; } }
   @media only screen and (max-width: 767px) {
     .contact-pop-up {
-      right: -80%; } }
+      right: -100%; } }
   @media only screen and (min-width: 768px) {
     .contact-pop-up {
       right: -80%; } }

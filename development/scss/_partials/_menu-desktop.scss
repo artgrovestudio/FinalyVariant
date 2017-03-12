@@ -26,8 +26,8 @@ nav.menu {
         text-align: center;
         font-family: Roboto;
         font-weight: 900;
-        line-height: 46px;
-        @include responsive(font-size, 20px, 32px, 22px, 26px, 26px);
+        @include responsive(line-height, 46px, 46px, 46px, 46px, 56px);
+        @include responsive(font-size, 20px, 32px, 22px, 26px, 36px);
       }
     }
   }

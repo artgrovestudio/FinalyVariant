@@ -4,8 +4,8 @@
   @include align(r,c);
   height: 100%;
   background-color: $white-color;
-  @include responsive(width, 80%, 80%, 75%, 50%, 50%);
-  @include responsive(right, -80%, -80%, -75%, -50%, -50%);
+  @include responsive(width, 100%, 80%, 75%, 50%, 50%);
+  @include responsive(right, -100%, -80%, -75%, -50%, -50%);
 
   transition: right .5s;
   animation-timing-function: ease-in;

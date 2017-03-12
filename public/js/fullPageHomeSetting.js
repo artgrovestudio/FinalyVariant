@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $('#fullpage').fullpage({
-        //anchors:['', 'secondPage', 'thirdPage', 'fourPage'],
+        anchors:['home', 'projects'],
         sectionsColor: ['#ccc', '#000', '#555', '#212121'],
         scrollingSpeed: 600
     });
