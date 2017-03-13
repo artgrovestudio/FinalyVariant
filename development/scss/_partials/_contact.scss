@@ -24,7 +24,9 @@
 
     h2 {
       position: relative;
+      display: inline;
       text-align: right;
+      float: right;
       font-family: Playfair Display;
       margin-bottom: 50px;
       color: $black-color;
@@ -46,7 +48,7 @@
         content: "";
         position: absolute;
         top: 58%;
-        right: -50px;
+        left: -50px;
         transform: translateY(-50%);
         width: 20px;
         height: 6px;
@@ -190,4 +192,75 @@
 
 .contact-pop-up.open {
   right: 0;
+}
+
+.contact-info {
+  $padding: 40px;
+
+  display: none;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .25s;
+
+  @include device('desktop') {
+    display: block;
+    width: calc(50% - #{$global-padding-desktop});
+    left: $global-padding-desktop;
+  }
+  @include device('large-desktop') {
+    width: calc(50% - #{$global-padding-large-desktop});
+    left: $global-padding-large-desktop;
+  }
+
+  .block-wrapper {
+    position: absolute;
+    @include align(c,c);
+    text-align: center;
+
+    p.title {
+      font-weight: 100;
+      @include device('desktop') {
+        font-size: 14px;
+        margin-bottom: 25px;
+      }
+      @include device('large-desktop') {
+        font-size: 16px;
+        margin-bottom: 40px;
+      }
+    }
+
+    a {
+      color: $white-color;
+      p {
+        font-weight: 900;
+
+        @include device('desktop') {
+          font-size: 28px;
+        }
+        @include device('large-desktop') {
+          font-size: 36px;
+        }
+      }
+    }
+
+    p.mail {
+      margin-top: 10px;
+      font-weight: 900;
+
+      @include device('desktop') {
+        font-size: 14px;
+      }
+      @include device('large-desktop') {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.contact-info.show {
+  opacity: 1;
 }

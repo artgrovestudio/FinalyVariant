@@ -23,6 +23,9 @@ window.onload = function() {
 	var arrowLink = $('#index nav .arrow-link');
 	var arrowLinkArrow = $('#index nav .arrow-link .arrow');
 	var arrowLinkParagraph = $('#index nav .arrow-link p');
+	// PopUp info
+	var aboutInfo = $('.about-info');
+	var contactInfo = $('.contact-info');
 
 	var aboutArrowContainer = $(".arrow-link .arrow-about");
 	var aboutParagraph = $(".arrow-link .arrow-about p");
@@ -80,8 +83,10 @@ window.onload = function() {
 				contactParagraph.addClass("btn-close");
 				hamburger.addClass("open-pop-up-about");
 				scroolDown.addClass("hide");
-				content.fadeOut();
+				aboutInfo.addClass("show");
+				content.addClass("hide");
 				borderNav.addClass("about-black");
+				videoBG.addClass("blur");
 				videoBGdarken.addClass("visible");
 				scrollingParameters('disable');
 			} else if (action == 'close') {
@@ -91,8 +96,10 @@ window.onload = function() {
 				contactParagraph.removeClass("btn-close");
 				hamburger.removeClass("open-pop-up-about");
 				scroolDown.removeClass("hide");
-				content.fadeIn();
+				aboutInfo.removeClass("show");
+				content.removeClass("hide");
 				borderNav.removeClass("about-black");
+				videoBG.removeClass("blur");
 				videoBGdarken.removeClass("visible");
 				scrollingParameters('enable');
 			}
@@ -104,8 +111,10 @@ window.onload = function() {
 				aboutParagraph.addClass("btn-close");
 				hamburger.addClass("open-pop-up-contact");
 				scroolDown.addClass("hide");
-				content.fadeOut();
+				contactInfo.addClass("show");
+				content.addClass("hide");
 				borderNav.addClass("contact-black");
+				videoBG.addClass("blur");
 				videoBGdarken.addClass("visible");
 				scrollingParameters('disable');
 			} else if (action == 'close') {
@@ -115,8 +124,10 @@ window.onload = function() {
 				aboutParagraph.removeClass("btn-close");
 				hamburger.removeClass("open-pop-up-contact");
 				scroolDown.removeClass("hide");
-				content.fadeIn();
+				contactInfo.removeClass("show");
+				content.removeClass("hide");
 				borderNav.removeClass("contact-black");
+				videoBG.removeClass("blur");
 				videoBGdarken.removeClass("visible");
 				scrollingParameters('enable');
 			}

@@ -1,9 +1,6 @@
 // Home Style
 
 #index {
-	.section {
-		position: relative;
-	}
 
 	.section.header {
 		position: relative;
@@ -21,6 +18,11 @@
 			background-position: center center;
 			object-fit: cover; /*cover video background */
 			z-index: 3;
+			transition: filter .5s;
+		}
+
+		video.blur {
+			filter: blur(4px);
 		}
 
 		video::-webkit-media-controls {
@@ -40,7 +42,7 @@
 		}
 
 		.video-darken.visible {
-			opacity: .5;
+			opacity: .65;
 		}
 
 		.content {
@@ -50,6 +52,7 @@
 			left: 0;
 			z-index: 4;
 			transform: translate3d(0,0,0) translateY(-50%);
+			transition: opacity .25s;
 			@include device('mobile') {
 				margin-top: 30px;
 			}
@@ -85,6 +88,14 @@
 				@include device('mobile') {
 					margin-top: 20px;
 				}
+			}
+		}
+
+		.content.hide {
+			opacity: 0;
+
+			.btn-projects {
+				pointer-events: none;
 			}
 		}
 
