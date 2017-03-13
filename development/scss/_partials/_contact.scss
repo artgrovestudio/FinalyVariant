@@ -13,7 +13,7 @@
   .contact-form {
     position: absolute;
     top: 50%;
-    right: 16%;
+    right: 17%;
     transform: translateY(-50%);
     width: 66%;
     $width: 1000px;
@@ -26,9 +26,21 @@
       position: relative;
       text-align: right;
       font-family: Playfair Display;
-      @include responsive(font-size, 48px, 48px, 48px, 36px, 48px);
-      color: $black-color;
       margin-bottom: 50px;
+      color: $black-color;
+      @include responsive(font-size, 48px, 48px, 48px, 36px, 48px);
+      @include device('small-mobile') {
+				font-size: 26px;
+        margin-bottom: 20px;
+			}
+      @include device('mobile') {
+        text-align: center;
+
+        &:after {
+          display: none;
+        }
+      }
+
 
       &:after {
         content: "";
@@ -58,8 +70,6 @@
       textarea {
         position: relative;
         font: inherit;
-        font-size: 18px;
-        @include responsive(font-size, 14px, 14px, 14px, 14px, 18px);
         text-align: right;
         width: 100%;
         display: block;
@@ -74,6 +84,14 @@
         transition: background 0.3s $cubic;
         resize: none;
         overflow: hidden;
+        @include responsive(font-size, 14px, 14px, 14px, 14px, 18px);
+        @include device('small-mobile') {
+          font-size: 12px;
+          margin-bottom: 5px;
+        }
+        @include device('mobile') {
+          text-align: center;
+        }
 
         &:focus::-webkit-input-placeholder {
           color: $base;
@@ -96,6 +114,9 @@
 
       textarea {
         margin-bottom: 60px;
+        @include device('small-mobile') {
+          margin-bottom: 20px;
+        }
       }
 
       input[type="email"] {
@@ -158,7 +179,9 @@
         margin-left: 50%;
         color: $white-color;
 
-        &:hover {
+        @include device('mobile') {
+          width: 100%;
+          margin-left: 0;
         }
       }
     }

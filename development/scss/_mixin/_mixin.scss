@@ -19,6 +19,10 @@
     @media only screen and (min-width: 1600px) {
       @content;
     }
+  } @else if $type == 'small-mobile' {
+    @media only screen and (max-width: 360px) {
+      @content;
+    }
   }
 }
 
