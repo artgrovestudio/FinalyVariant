@@ -112,6 +112,31 @@ nav.border-nav {
 		}
   }
 
+  .hamburger.open-pop-up-about,
+  .hamburger.open-pop-up-contact {
+    @include device('mobile') {
+      .line:nth-child(1) {
+        transform: translateY(9.25px) rotate(45deg);
+        @include device('tablet') {
+          transform: translateY(8.25px) rotate(45deg);
+        }
+        @include device('large-desktop') {
+          transform: translateY(9.25px) rotate(45deg);
+        }
+      }
+      .line:nth-child(2) {
+        transform: scale(0);
+      }
+
+      .line:nth-child(3) {
+        transform: translateY(-9.25px) rotate(-45deg);
+        @include device('tablet') {
+          transform: translateY(-8.25px) rotate(-45deg);
+        }
+      }
+    }
+  }
+
   .social-media {
     position: absolute;
     @include align(l, b);
@@ -157,7 +182,8 @@ nav.border-nav {
   }
 }
 
-nav.border-nav.about-black {
+nav.border-nav.about-black,
+nav.border-nav.contact-black {
   @include device('mobile') {
     .logo {
       a {
@@ -183,7 +209,9 @@ nav.border-nav.about-black {
       }
     }
   }
+}
 
+nav.border-nav.about-black {
   @include device('tablet') {
     .logo {
       a {
@@ -192,6 +220,22 @@ nav.border-nav.about-black {
     }
 
     .social-media {
+      a {
+        color: $black-color;
+      }
+    }
+  }
+}
+
+nav.border-nav.contact-black {
+  @include device('tablet') {
+    .hamburger {
+      .line {
+        background-color: $black-color;
+      }
+    }
+
+    .phone {
       a {
         color: $black-color;
       }

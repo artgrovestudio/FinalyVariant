@@ -78,6 +78,7 @@ window.onload = function() {
 				aboutPopUp.addClass("open");
 				contactArrow.addClass("btn-close");
 				contactParagraph.addClass("btn-close");
+				hamburger.addClass("open-pop-up-about");
 				scroolDown.addClass("hide");
 				content.fadeOut();
 				borderNav.addClass("about-black");
@@ -88,6 +89,7 @@ window.onload = function() {
 				aboutPopUp.removeClass("open");
 				contactArrow.removeClass("btn-close");
 				contactParagraph.removeClass("btn-close");
+				hamburger.removeClass("open-pop-up-about");
 				scroolDown.removeClass("hide");
 				content.fadeIn();
 				borderNav.removeClass("about-black");
@@ -100,6 +102,7 @@ window.onload = function() {
 				contactPopUp.addClass("open");
 				aboutArrow.addClass("btn-close");
 				aboutParagraph.addClass("btn-close");
+				hamburger.addClass("open-pop-up-contact");
 				scroolDown.addClass("hide");
 				content.fadeOut();
 				borderNav.addClass("contact-black");
@@ -110,6 +113,7 @@ window.onload = function() {
 				contactPopUp.removeClass("open");
 				aboutArrow.removeClass("btn-close");
 				aboutParagraph.removeClass("btn-close");
+				hamburger.removeClass("open-pop-up-contact");
 				scroolDown.removeClass("hide");
 				content.fadeIn();
 				borderNav.removeClass("contact-black");
@@ -167,10 +171,22 @@ window.onload = function() {
 	//	Nav desktop
 
 	$(hamburger).click(function() {
-		if ($(hamburger).hasClass("open")) {
-			navAnimation('close');
+		if ($("body").width() >= 768) {
+			if ($(hamburger).hasClass("open")) {
+				navAnimation('close');
+			} else {
+				navAnimation('open');
+			}
 		} else {
-			navAnimation('open');
+			if ($(hamburger).hasClass("open")) {
+				navAnimation('close');
+			} else if ($(hamburger).hasClass("open-pop-up-about")) {
+				popUpAnimation('about', 'close');
+			} else if ($(hamburger).hasClass("open-pop-up-contact")) {
+				popUpAnimation('contact', 'close');
+			}	else {
+				navAnimation('open');
+			}
 		}
 	});
 
