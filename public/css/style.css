@@ -36,6 +36,25 @@ h4, h5, h6, p {
   -webkit-animation-timing-function: ease-in-out;
           animation-timing-function: ease-in-out; }
 
+a.btn-link {
+  display: block;
+  margin: 0 auto;
+  width: 200px; }
+  a.btn-link .btn {
+    width: 200px;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: lowercase;
+    line-height: 38px;
+    border: 2px solid #fff;
+    text-align: center;
+    -webkit-transition: all .25s;
+    transition: all .25s;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out; }
+
 /*!
  * fullPage 2.9.2
  * https://github.com/alvarotrigo/fullPage.js
@@ -385,8 +404,6 @@ nav.border-nav {
         @media only screen and (min-width: 1600px) {
           nav.border-nav .logo a p {
             font-size: 30px; } }
-  nav.border-nav .logo.black a {
-    color: #212121; }
   nav.border-nav .elements {
     display: none;
     opacity: 0;
@@ -460,8 +477,6 @@ nav.border-nav {
           height: 3px; } }
       nav.border-nav .hamburger .line:last-child {
         margin-bottom: 0; }
-  nav.border-nav .hamburger.black .line {
-    background-color: #212121; }
   nav.border-nav .hamburger.open .line:nth-child(1) {
     -webkit-transform: translateY(9.25px) rotate(45deg);
             transform: translateY(9.25px) rotate(45deg); }
@@ -513,8 +528,6 @@ nav.border-nav {
         @media only screen and (min-width: 1600px) {
           nav.border-nav .social-media a p {
             font-size: 16px; } }
-  nav.border-nav .social-media.black a {
-    color: #212121; }
   nav.border-nav .phone {
     position: absolute;
     bottom: 0;
@@ -543,8 +556,22 @@ nav.border-nav {
         @media only screen and (min-width: 1600px) {
           nav.border-nav .phone a p {
             font-size: 16px; } }
-  nav.border-nav .phone.black a {
+
+@media only screen and (max-width: 767px) {
+  nav.border-nav.about-black .logo a {
     color: #212121; }
+  nav.border-nav.about-black .hamburger .line {
+    background-color: #212121; }
+  nav.border-nav.about-black .social-media a {
+    color: #212121; }
+  nav.border-nav.about-black .phone a {
+    color: #212121; } }
+
+@media only screen and (min-width: 768px) {
+  nav.border-nav.about-black .logo a {
+    color: #212121; }
+  nav.border-nav.about-black .social-media a {
+    color: #212121; } }
 
 nav.menu {
   position: absolute;

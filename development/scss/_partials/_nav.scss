@@ -49,12 +49,6 @@ nav.border-nav {
     }
   }
 
-  .logo.black {
-    a {
-      color: $black-color;
-    }
-  }
-
   .elements {
     display: none;
     opacity: 0;
@@ -92,12 +86,6 @@ nav.border-nav {
       &:last-child {
         margin-bottom: 0;
       }
-    }
-  }
-
-  .hamburger.black {
-    .line {
-      background-color: $black-color;
     }
   }
 
@@ -147,12 +135,6 @@ nav.border-nav {
     }
   }
 
-  .social-media.black {
-    a {
-      color: $black-color;
-    }
-  }
-
   .phone {
     position: absolute;
     @include align(r, b);
@@ -173,10 +155,46 @@ nav.border-nav {
       }
     }
   }
+}
 
-  .phone.black {
-    a {
-      color: $black-color;
+nav.border-nav.about-black {
+  @include device('mobile') {
+    .logo {
+      a {
+        color: $black-color;
+      }
+    }
+
+    .hamburger {
+      .line {
+        background-color: $black-color;
+      }
+    }
+
+    .social-media {
+      a {
+        color: $black-color;
+      }
+    }
+
+    .phone {
+      a {
+        color: $black-color;
+      }
+    }
+  }
+
+  @include device('tablet') {
+    .logo {
+      a {
+        color: $black-color;
+      }
+    }
+
+    .social-media {
+      a {
+        color: $black-color;
+      }
     }
   }
 }

@@ -11,6 +11,8 @@ window.onload = function() {
 	// Hamburger
 	var hamburger = $('nav.border-nav .hamburger');
 	var hamburgerLine = $('nav .hamburger .line');
+	// Border nav
+	var borderNav = $('nav.border-nav');
 	// Navigation
 	var navigation = $("nav.menu");
 	var navigationElemBlock = $("nav.menu ul");
@@ -78,8 +80,7 @@ window.onload = function() {
 				contactParagraph.addClass("btn-close");
 				scroolDown.addClass("hide");
 				content.fadeOut();
-				logo.addClass("black");
-				socialMedia.addClass("black");
+				borderNav.addClass("about-black");
 				videoBGdarken.addClass("visible");
 				scrollingParameters('disable');
 			} else if (action == 'close') {
@@ -89,8 +90,7 @@ window.onload = function() {
 				contactParagraph.removeClass("btn-close");
 				scroolDown.removeClass("hide");
 				content.fadeIn();
-				logo.removeClass("black");
-				socialMedia.removeClass("black");
+				borderNav.removeClass("about-black");
 				videoBGdarken.removeClass("visible");
 				scrollingParameters('enable');
 			}
@@ -102,8 +102,7 @@ window.onload = function() {
 				aboutParagraph.addClass("btn-close");
 				scroolDown.addClass("hide");
 				content.fadeOut();
-				hamburger.addClass("black");
-				phone.addClass("black");
+				borderNav.addClass("contact-black");
 				videoBGdarken.addClass("visible");
 				scrollingParameters('disable');
 			} else if (action == 'close') {
@@ -113,8 +112,7 @@ window.onload = function() {
 				aboutParagraph.removeClass("btn-close");
 				scroolDown.removeClass("hide");
 				content.fadeIn();
-				hamburger.removeClass("black");
-				phone.removeClass("black");
+				borderNav.removeClass("contact-black");
 				videoBGdarken.removeClass("visible");
 				scrollingParameters('enable');
 			}
@@ -156,13 +154,13 @@ window.onload = function() {
 
 	function navAnimation(action) {
 		if (action == 'open') {
-			$(hamburger).addClass("open");
-			$(navigation).addClass("open");
-			$(navigationElemBlock).addClass("fade-in-down");
+			hamburger.addClass("open");
+			navigation.addClass("open");
+			navigationElemBlock.addClass("fade-in-down");
 		} else if (action == 'close') {
-			$(hamburger).removeClass("open");
-			$(navigation).removeClass("open");
-			$(navigationElemBlock).removeClass("fade-in-down");
+			hamburger.removeClass("open");
+			navigation.removeClass("open");
+			navigationElemBlock.removeClass("fade-in-down");
 		}
 	}
 
